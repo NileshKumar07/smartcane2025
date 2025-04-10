@@ -1,0 +1,1424 @@
+/* Reset and Base Styles */
+:root {
+    --primary-color: #2C3E50;
+    --secondary-color: #3498DB;
+    --accent-color: #E74C3C;
+    --text-color: #333;
+    --light-bg: #F5F6FA;
+    --white: #FFFFFF;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--white);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 5px 0;
+    transition: var(--transition);
+}
+
+/* Updated Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(rgba(44, 62, 80, 0.6), rgba(52, 152, 219, 0.6)),
+                url('Vivo Ignite.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(44, 62, 80, 0.3) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 900px;
+    color: var(--white);
+    z-index: 2;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+}
+
+.vivo-ignite {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+    color: var(--white);
+    display: inline-block;
+}
+
+.hero-tagline {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-weight: 400;
+    line-height: 1.8;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.coming-soon {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-overlay {
+    display: none;
+}
+
+/* Remove the floating image styles */
+.hero-image {
+    display: none;
+}
+
+/* Buttons */
+.cta-button {
+    display: inline-block;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: var(--secondary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: #2980b9;
+}
+
+/* Auth Buttons */
+.auth-btn {
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.auth-btn.signup {
+    background: var(--secondary-color);
+    color: var(--white);
+}
+
+.auth-btn.signup:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Features Section */
+.features {
+    padding: 5rem 5%;
+    background: var(--light-bg);
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--light-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+}
+
+.feature-icon i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    transition: var(--transition);
+}
+
+.feature-card:hover .feature-icon {
+    background: var(--secondary-color);
+}
+
+.feature-card:hover .feature-icon i {
+    color: var(--white);
+}
+
+.feature-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.feature-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* How It Works Section */
+.workflow-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.workflow-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.workflow-item:hover {
+    transform: translateY(-5px);
+}
+
+.workflow-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: var(--light-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.workflow-icon i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+.workflow-item:hover .workflow-icon i {
+    transform: scale(1.1);
+}
+
+/* Benefits Section */
+.benefits {
+    padding: 6rem 5%;
+    background: linear-gradient(to bottom, var(--light-bg), #e8f4fd);
+    position: relative;
+}
+
+/* Add subtle background pattern */
+.benefits::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: radial-gradient(rgba(52, 152, 219, 0.1) 2px, transparent 2px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+.benefits h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.benefits h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.benefit-card {
+    background: var(--white);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--secondary-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.benefit-card:hover::before {
+    transform: scaleX(1);
+}
+
+.benefit-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.benefit-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-card:hover::after {
+    opacity: 0.05;
+}
+
+.benefit-icon {
+    width: 110px;
+    height: 110px;
+    background: var(--light-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+}
+
+.benefit-icon i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    transition: all 0.4s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+    transform: scale(1.1);
+    background: var(--secondary-color);
+    border-color: var(--white);
+}
+
+.benefit-card:hover .benefit-icon i {
+    color: var(--white);
+}
+
+.benefit-card h3 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    z-index: 2;
+    font-weight: 600;
+}
+
+.benefit-card p {
+    color: var(--text-color);
+    line-height: 1.7;
+    position: relative;
+    z-index: 2;
+    font-size: 1.05rem;
+}
+
+/* Chatbot Styles */
+.chatbot {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 350px;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.chatbot.active {
+    transform: scale(1);
+}
+
+.chatbot-header {
+    padding: 15px 20px;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbot-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+#close-chat {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+.chatbot-messages {
+    height: 350px;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.message {
+    margin-bottom: 15px;
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.bot-message {
+    background: var(--light-bg);
+    margin-right: auto;
+}
+
+.user-message {
+    background: var(--secondary-color);
+    color: var(--white);
+    margin-left: auto;
+}
+
+.message p {
+    margin: 0 0 10px 0;
+}
+
+.message ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.message-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.message-options button {
+    background: var(--white);
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    padding: 5px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.message-options button:hover {
+    background: var(--secondary-color);
+    color: var(--white);
+}
+
+.chatbot-input {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+}
+
+#send-message {
+    background: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+#send-message:hover {
+    background: #2980b9;
+    transform: scale(1.1);
+}
+
+.chat-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    z-index: 999;
+}
+
+.chat-toggle:hover {
+    transform: scale(1.1);
+    background: #2980b9;
+}
+
+/* Contact Section */
+.contact {
+    padding: 5rem 5%;
+    background: var(--light-bg);
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+#contact-form {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e1e1e1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-status {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    display: none;
+}
+
+.form-status.success {
+    display: block;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-status.error {
+    display: block;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 3rem 5% 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--white);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-section a:hover {
+    color: var(--secondary-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .hero {
+        padding-top: 80px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .hero-tagline {
+        font-size: 1.2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .vivo-ignite {
+        font-size: 1.5rem;
+    }
+
+    .chatbot {
+        width: 300px;
+        bottom: 30px;
+        right: 20px;
+    }
+
+    .chat-toggle {
+        bottom: 30px;
+        right: 20px;
+    }
+
+    .features h2,
+    .benefits h2 {
+        font-size: 2rem;
+    }
+
+    .feature-card,
+    .benefit-card {
+        padding: 1.5rem;
+    }
+
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .feature-icon i {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .chatbot {
+        width: calc(100% - 40px);
+        bottom: 30px;
+        right: 20px;
+    }
+
+    .workflow-item {
+        padding: 1.5rem;
+    }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Focus Styles */
+:focus {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (forced-colors: active) {
+    .cta-button {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Update CTA button for better visibility */
+.hero .cta-button {
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.hero .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Product Showcase Section */
+.product-showcase {
+    padding: 5rem 5%;
+    background: var(--white);
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.product-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.product-image:hover .product-img {
+    transform: scale(1.05);
+}
+
+.product-details {
+    padding: 2rem 0;
+}
+
+.product-details h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.product-description {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+}
+
+.key-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.feature-item {
+    padding: 1.5rem;
+    background: var(--light-bg);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-item h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Responsive Design for Product Showcase */
+@media (max-width: 992px) {
+    .product-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .product-image {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .key-features {
+        grid-template-columns: 1fr;
+    }
+
+    .product-details h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Introduction Section */
+.introduction {
+    padding: 5rem 5%;
+    background: var(--light-bg);
+}
+
+.intro-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.intro-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.intro-card:hover::before {
+    opacity: 0.05;
+}
+
+.intro-icon {
+    width: 100px;
+    height: 100px;
+    background: var(--light-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: all 0.4s ease;
+}
+
+.intro-icon i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    transition: all 0.4s ease;
+}
+
+.intro-card:hover .intro-icon {
+    transform: scale(1.1);
+    background: var(--secondary-color);
+}
+
+.intro-card:hover .intro-icon i {
+    color: var(--white);
+}
+
+.intro-card h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.intro-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+}
+
+/* Enhanced Hover Effects for Feature Cards */
+.feature-card {
+    transform: translateY(0);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.feature-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    transition: all 0.4s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1);
+    background: var(--secondary-color);
+}
+
+.feature-card:hover .feature-icon i {
+    color: var(--white);
+}
+
+/* Enhanced Hover Effects for Workflow Items */
+.workflow-item {
+    transform: translateY(0);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.workflow-item:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.workflow-icon {
+    transition: all 0.4s ease;
+}
+
+.workflow-item:hover .workflow-icon {
+    transform: scale(1.1);
+    background: var(--secondary-color);
+}
+
+.workflow-item:hover .workflow-icon i {
+    color: var(--white);
+}
+
+/* Enhanced Hover Effects for Benefit Cards */
+.benefit-card {
+    transform: translateY(0);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.benefit-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-card i {
+    transition: all 0.4s ease;
+}
+
+.benefit-card:hover i {
+    transform: scale(1.1);
+    color: var(--primary-color);
+}
+
+/* Responsive Design for Introduction Section */
+@media (max-width: 768px) {
+    .intro-card {
+        padding: 2rem;
+    }
+
+    .intro-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .intro-icon i {
+        font-size: 2rem;
+    }
+
+    .intro-card h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Smart Cane Introduction Section */
+.smart-cane-intro {
+    padding: 5rem 5%;
+    background: var(--white);
+}
+
+.smart-cane-intro h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro-text {
+    padding: 3rem;
+    background: var(--light-bg);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.intro-text:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.intro-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.intro-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.intro-text ul li {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.intro-text ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* Responsive Design for Introduction Section */
+@media (max-width: 768px) {
+    .smart-cane-intro h2 {
+        font-size: 2rem;
+    }
+
+    .intro-text {
+        padding: 2rem;
+    }
+
+    .intro-text p,
+    .intro-text ul li {
+        font-size: 1rem;
+    }
+}
+
+/* Updated Benefits Section Styles */
+.benefit-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.benefit-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-card:hover::before {
+    opacity: 0.05;
+}
+
+.benefit-icon {
+    width: 100px;
+    height: 100px;
+    background: var(--light-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.benefit-icon i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    transition: all 0.4s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+    transform: scale(1.1);
+    background: var(--secondary-color);
+}
+
+.benefit-card:hover .benefit-icon i {
+    color: var(--white);
+}
+
+.benefit-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.benefit-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsive Design for New Sections */
+@media (max-width: 992px) {
+    .intro-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .intro-image {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .smart-cane-intro h2 {
+        font-size: 2rem;
+    }
+
+    .intro-text {
+        padding: 1.5rem;
+    }
+
+    .benefit-card {
+        padding: 2rem;
+    }
+
+    .benefit-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .benefit-icon i {
+        font-size: 2rem;
+    }
+
+    .benefit-card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Creator Button */
+.creator-btn {
+    background: var(--secondary-color);
+    color: var(--white) !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.2);
+}
+
+.creator-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(52, 152, 219, 0.3);
+    color: var(--white) !important;
+}
+
+@media (max-width: 768px) {
+    .creator-btn {
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        display: inline-block;
+        width: auto;
+        text-align: center;
+    }
+} 
